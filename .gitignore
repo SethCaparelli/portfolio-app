@@ -1,2 +1,7 @@
 # dependencies
 /node_modules
+
+# Build
+build
+build/*
+*/.DS_Store
