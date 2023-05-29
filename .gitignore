@@ -4,4 +4,6 @@
 # Build
 build
 build/*
+
+# DS store
 */.DS_Store
