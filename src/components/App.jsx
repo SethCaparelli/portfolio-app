@@ -106,115 +106,251 @@ class App extends Component {
     })
   }
 
-  getTree = () => {
-    this.setState({
-      work: []
-    })
-    fetch("https://aqueous-dusk-19159.herokuapp.com/tree")
-    .then((response) => {
-      return response.json()
-    })
-    .then((data) => {
-      this.setState({
-        work: data.tree,
-        workTitle: "Reclaim Tree"
-      })
-    })
-  }
-
   getCactus = () => {
-    this.setState({
-      work: []
-    })
-    fetch("https://aqueous-dusk-19159.herokuapp.com/cactus")
-    .then((response) => {
-      return response.json()
-    })
-    .then((data) => {
       this.setState({
-        work: data.cactus,
+        work: [{
+          url: "/assets/cactus/cactus^3_ver_1.jpg"
+        }, {
+          url: "/assets/cactus/cactus^3_ver_1_close_1.jpg"
+        }, {
+          url: "/assets/cactus/cactus^3_ver_1_close_2.jpg"
+        }, {
+          url: "/assets/cactus/cactus^3_ver_2.jpg"
+        }, {
+          url: "/assets/cactus/cactus^3_ver_2_close.jpg"
+        }, {
+          url: "/assets/cactus/cactus^3_ver_3.jpg"
+        }, {
+          url: "/assets/cactus/cactus^3_ver_3_close.jpg"
+        }, {
+          url: "/assets/cactus/cactus^3_ver_4.jpg"
+        }, {
+          url: "/assets/cactus/cactus^3_ver_5.jpg"
+        }, {
+          url: "/assets/cactus/cactus^3_ver_5_close.jpg"
+        }, {
+          url: "/assets/cactus/cactus^3_ver_6.jpg"
+        }, {
+          url: "/assets/cactus/cactus^3_ver_6_close.jpg"
+        }, {
+          url: "/assets/cactus/cactus^3_ver_7.jpg"
+        }, {
+          url: "/assets/cactus/cactus^3_ver_7_close.jpg"
+        }],
         workTitle: "Cactus^3"
       })
-    })
+  }
+
+  getTree = () => {
+      this.setState({
+        work: [{
+          url: "/assets/tree/reclaim_tree_ver_1.jpg"
+        }, {
+          url: "/assets/tree/reclaim_tree_ver_2.jpg"
+        }, {
+          url: "/assets/tree/reclaim_tree_ver_2_close_1.jpg"
+        }, {
+          url: "/assets/tree/reclaim_tree_ver_2_close_2.jpg"
+        }, {
+          url: "/assets/tree/reclaim_tree_ver_3.jpg"
+        }, {
+          url: "/assets/tree/reclaim_tree_ver_3_close.jpg"
+        }],
+        workTitle: "Reclaim Tree"
+      })
   }
 
   getSculpture = () => {
     this.setState({
-      work: []
-    })
-    fetch("https://aqueous-dusk-19159.herokuapp.com/sculpture")
-    .then((response) => {
-      return response.json()
-    })
-    .then((data) => {
-      this.setState({
-        work: data.sculpture,
-        workTitle: "Sculpture"
-      })
+      work: [{
+        url: "/assets/sculpture/struggling_pose.jpg"
+      }, {
+        url: "/assets/sculpture/head_front.jpg"
+      }, {
+        url: "/assets/sculpture/head_side.jpg"
+      }, {
+        url: "/assets/sculpture/head_right.jpg"
+      }, {
+        url: "/assets/sculpture/head_left.jpg"
+      }, {
+        url: "/assets/sculpture/head_back.jpg"
+      }, {
+        url: "/assets/sculpture/sky^3.jpg"
+      }, {
+        url: "/assets/sculpture/sky^3_close.jpg"
+      }, {
+        url: "/assets/sculpture/stone_hammers.jpg"
+      }, {
+        url: "/assets/sculpture/stone_hammers_close.jpg"
+      }, {
+        url: "/assets/sculpture/ring_and_container.jpg"
+      }, {
+        url: "/assets/sculpture/ring_and_container_close.jpg"
+      }, {
+        url: "/assets/sculpture/gear_postcard_front.jpg"
+      }, {
+        url: "/assets/sculpture/gear_postcard_back.jpg"
+      }],
+      workTitle: "Sculpture"
     })
   }
 
   getVessel = () => {
     this.setState({
-      work: []
-    })
-    fetch("https://aqueous-dusk-19159.herokuapp.com/vessel")
-    .then((response) => {
-      return response.json()
-    })
-    .then((data) => {
-      this.setState({
-        work: data.vessel,
-        workTitle: "Vessel"
-      })
+      work: [{
+        url: "/assets/vessel/tea_pot_1.jpg"
+      }, {
+        url: "/assets/vessel/tea_pot_2.jpg"
+      }, {
+        url: "/assets/vessel/tea_pot_3.jpg"
+      }, {
+        url: "/assets/vessel/tea_pot_4.jpg"
+      }, {
+        url: "/assets/vessel/pitcher_1.jpg"
+      }, {
+        url: "/assets/vessel/pitcher_2.jpg"
+      }, {
+        url: "/assets/vessel/cup_5.jpg"
+      }, {
+        url: "/assets/vessel/cup_6.jpg"
+      }, {
+        url: "/assets/vessel/cup_1.jpg"
+      }, {
+        url: "/assets/vessel/cup_2.jpg"
+      }, {
+        url: "/assets/vessel/cup_3.jpg"
+      }, {
+        url: "/assets/vessel/cup_4.jpg"
+      }, {
+        url: "/assets/vessel/plate_1.jpg"
+      }, {
+        url: "/assets/vessel/plate_2.jpg"
+      }, {
+        url: "/assets/vessel/plate_3.jpg"
+      }, {
+        url: "/assets/vessel/plate_4.jpg"
+      }, {
+        url: "/assets/vessel/watering_can_1.jpg"
+      }, {
+        url: "/assets/vessel/puzzle_plate_1.jpg"
+      }, {
+        url: "/assets/vessel/puzzle_plate_2.jpg"
+      }],
+      workTitle: "Vessel"
     })
   }
 
   getPainting = () => {
     this.setState({
-      work: []
-    })
-    fetch("https://aqueous-dusk-19159.herokuapp.com/painting")
-    .then((response) => {
-      return response.json()
-    })
-    .then((data) => {
-      this.setState({
-        work: data.painting,
-        workTitle: "Painting"
-      })
+      work: [{
+        url: "/assets/painting/leaving_las_vegas.jpg"
+      }, {
+        url: "/assets/painting/the_future^3_installation.jpg"
+      }, {
+        url: "/assets/painting/the_future^3.jpg"
+      }, {
+        url: "/assets/painting/the_future^3_close.jpg"
+      }, {
+        url: "/assets/painting/tomato_soup.jpg"
+      }, {
+        url: "/assets/painting/happy_tree.jpg"
+      }, {
+        url: "/assets/painting/sad_tree.jpg"
+      }, {
+        url: "/assets/painting/me_jean.jpg"
+      }],
+      workTitle: "Painting"
     })
   }
 
   getAdvertising = () => {
     this.setState({
-      work: []
+      work: [{
+        url: "/assets/advertising/etch_a_sketch_1.jpg"
+      }, {
+        url: "/assets/advertising/etch_a_sketch_2.jpg"
+      }, {
+        url: "/assets/advertising/etch_a_sketch_3.jpg"
+      }, {
+        url: "/assets/advertising/shout_wine.jpg"
+      }, {
+        url: "/assets/advertising/shout_mustard.jpg"
+      }, {
+        url: "/assets/advertising/shout_grass.jpg"
+      }, {
+        url: "/assets/advertising/vans_ur_print_cover.jpg"
+      }, {
+        url: "/assets/advertising/vans_ur_print_1.jpg"
+      }, {
+        url: "/assets/advertising/vans_ur_print_2.jpg"
+      }, {
+        url: "/assets/advertising/vans_ur_print_3.jpg"
+      }, {
+        url: "/assets/advertising/gphone_1.jpg"
+      }, {
+        url: "/assets/advertising/gphone_2.jpg"
+      }, {
+        url: "/assets/advertising/gphone_3.jpg"
+      }, {
+        url: "/assets/advertising/best_if_used_by_1.jpg"
+      }, {
+        url: "/assets/advertising/best_if_used_by_2.jpg"
+      }, {
+        url: "/assets/advertising/best_if_used_by_3.jpg"
+      }],
+      workTitle: "Vessel"
     })
-    fetch("https://aqueous-dusk-19159.herokuapp.com/advertising")
-    .then((response) => {
-      return response.json()
-    })
-    .then((data) => {
-      this.setState({
-        work: data.advertising,
-        workTitle: "Advertising"
-      })
+  }
+
+  getPainting = () => {
+    this.setState({
+      work: [{
+        url: "/assets/painting/leaving_las_vegas.jpg"
+      }, {
+        url: "/assets/painting/the_future^3_installation.jpg"
+      }, {
+        url: "/assets/painting/the_future^3.jpg"
+      }, {
+        url: "/assets/painting/the_future^3_close.jpg"
+      }, {
+        url: "/assets/painting/tomato_soup.jpg"
+      }, {
+        url: "/assets/painting/happy_tree.jpg"
+      }, {
+        url: "/assets/painting/sad_tree.jpg"
+      }, {
+        url: "/assets/painting/me_jean.jpg"
+      }],
+      workTitle: "Painting"
     })
   }
 
   getDesign = () => {
     this.setState({
-      work: []
-    })
-    fetch("https://aqueous-dusk-19159.herokuapp.com/design")
-    .then((response) => {
-      return response.json()
-    })
-    .then((data) => {
-      this.setState({
-        work: data.design,
-        workTitle: "Design"
-      })
+      work: [{
+        url: "/assets/graphic-design/surrealism_poster.jpg"
+      }, {
+        url: "/assets/graphic-design/nourish_1.jpg"
+      }, {
+        url: "/assets/graphic-design/nourish_de_muertos.jpg"
+      }, {
+        url: "/assets/graphic-design/spirit_thing.jpg"
+      }, {
+        url: "/assets/graphic-design/next_thing.jpg"
+      }, {
+        url: "/assets/graphic-design/lost_bulldog_poster.jpg"
+      }, {
+        url: "/assets/graphic-design/bobble_logo.jpg"
+      }, {
+        url: "/assets/graphic-design/elm_and_oak_shirt_1.jpg"
+      }, {
+        url: "/assets/graphic-design/elm_and_oak_shirt_2.jpg"
+      }, {
+        url: "/assets/graphic-design/elm_and_oak_shirt_3.jpg"
+      }, {
+        url: "/assets/graphic-design/elm_and_oak_shirt_4.jpg"
+      }],
+      workTitle: "Design"
     })
   }
 
@@ -229,12 +365,6 @@ class App extends Component {
           {this.state.work.length > 0
             ? this.state.work.map((work, index, collection) => <Work key={work.id} index={index} collection={collection} allWork={this.state.work} work={work}/>)
             : <div id="loader-container"><div className="loader">Loading...</div></div>}
-          {this.state.work.length > 0
-            ? <div className="work">
-                <img id="add-work" src="/assets/icons/camera-logo.png" alt="work"/>
-                <button onClick={this.onOpenModal}>Add Work</button>
-              </div>
-            : ""}
           </div>
           <Menu
             getApp={this.getApp}
@@ -248,22 +378,6 @@ class App extends Component {
           />
         </div>
         <Modal classNames={{ overlay: 'custom-overlay', modal: 'custom-modal' }} open={openModal} onClose={this.onCloseModal} little>
-          <h2>Add Work</h2>
-          <form onSubmit={(e) => {this.addWork(e)}} id="update-form">
-              <div className="input" id="name-input">
-                  <label htmlFor="name">Name</label>
-                  <input ref={(i) => {this.nameInput = i}} type="text"/>
-              </div>
-              <div className="input" id="material-input">
-                  <label htmlFor="material">Material</label>
-                  <input ref={(i) => {this.materialInput = i}} type="text"/>
-              </div>
-              <div className="input" id="url-input">
-                  <label htmlFor="url">Picture URL</label>
-                  <input ref={(i) => {this.urlInput = i}} type="text"/>
-              </div>
-              <input type="submit"/>
-          </form>
         </Modal>
         <Footer />
       </div>

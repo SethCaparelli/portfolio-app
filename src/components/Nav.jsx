@@ -45,7 +45,7 @@ class Nav extends Component {
                     I embrace the challenges of this industry and its constant evolution that I am excited to be apart of.</p>
                 </Modal>
                 <Modal classNames={{ overlay: 'resume-overlay', modal: 'resume-modal' }} open={openResume} onClose={this.onCloseResumeModal} little>
-                    <img id="resume" src="/assets/seth_caparelli_resume_new.png" alt="resume"/>
+                    <img id="resume" src="/assets/seth_capareli_resume.png" alt="resume"/>
                     <a href="https://drive.google.com/file/d/1rZ_xxq5kBboSFmpk2UEtfGwEuFhFw7fi/view?usp=sharing" target="_blank">
                         <i className="fas fa-download"></i>
                     </a>

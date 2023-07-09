@@ -139,10 +139,6 @@ class Work extends Component {
                         />
                         )}
                     </div>
-                    <div id="button-container">
-                        <button onClick={this.onOpenUpdateModal}>Edit</button>
-                        <button onClick={this.onOpenDeleteModal}>Delete</button>
-                    </div>
                     <Modal classNames={{ overlay: 'custom-overlay', modal: 'custom-modal' }} open={openUpdate} onClose={this.onCloseUpdateModal} little>
                         <h2>Update</h2>
                         <form ref={(input) => {this.updateForm = input}} onSubmit={(e) => {this.updateWork(e)}} id="update-form">
