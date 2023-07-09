@@ -7,3 +7,4 @@ build/*
 
 # DS store
 */.DS_Store
+**/.DS_Store
