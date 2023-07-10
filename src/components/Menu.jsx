@@ -1,20 +1,25 @@
 import React, { Component } from "react"
 
 class Menu extends Component {
+    originalState = {
+        image: {
+            app: "/assets/icons/app-icon.png",
+            cactus: "/assets/icons/cactus-icon.png",
+            tree: "/assets/icons/tree-icon.png",
+            sculpture: "/assets/icons/sculpture-icon.png",
+            vessel: "/assets/icons/vessel-icon.png",
+            painting: "/assets/icons/painting-icon.png",
+            advertising: "/assets/icons/advertising-icon.png",
+            design: "/assets/icons/design-icon.png"
+        }
+    }
     constructor() {
         super()
-        this.state = {
-            image: {
-                app: "/assets/icons/app-icon.png",
-                cactus: "/assets/icons/cactus-icon.png",
-                tree: "/assets/icons/tree-icon.png",
-                sculpture: "/assets/icons/sculpture-icon.png",
-                vessel: "/assets/icons/vessel-icon.png",
-                painting: "/assets/icons/painting-icon.png",
-                advertising: "/assets/icons/advertising-icon.png",
-                design: "/assets/icons/design-icon.png"
-            }
-        }
+        this.state = this.originalState
+    }
+
+    changeBack = () => () => {
+        this.setState(this.originalState)
     }
 
     changeCactus = () => {
@@ -140,14 +145,9 @@ class Menu extends Component {
     changePainting = () => {
         this.setState({
             image: {
-                app: "/assets/icons/app-icon.png",
-                cactus: "/assets/icons/cactus-icon.png",
-                tree: "/assets/icons/tree-icon.png",
-                sculpture: "/assets/icons/sculpture-icon.png",
-                vessel: "/assets/icons/vessel-icon.png",
+                ...this.state.image,
                 painting: "/assets/icons/painting-icon-color.png",
-                advertising: "/assets/icons/advertising-icon.png",
-                design: "/assets/icons/design-icon.png"
+        
             }
         })
     }
