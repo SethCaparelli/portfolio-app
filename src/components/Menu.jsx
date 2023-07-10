@@ -260,14 +260,46 @@ class Menu extends Component {
     render(){
         return(
             <div id="menu">
-                    <img onMouseEnter={this.changeApp} onMouseLeave={this.changeBackApp} className="icon-image" id="app-icon" src={this.state.image.app} alt="menu-item" onClick={this.props.getApp}/>
-                    <img onMouseEnter={this.changeCactus} onMouseLeave={this.changeBackCactus} className="icon-image" id="cactus-icon" src={this.state.image.cactus} alt="menu-item" onClick={this.props.getCactus}/>
-                    <img onMouseEnter={this.changeTree} onMouseLeave={this.changeBackTree} className="icon-image" id="tree-icon" src={this.state.image.tree} alt="menu-item" onClick={this.props.getTree}/>
-                    <img onMouseEnter={this.changeSculpture} onMouseLeave={this.changeBackSculpture} className="icon-image" id="sculpture-icon" src={this.state.image.sculpture} alt="menu-item" onClick={this.props.getSculpture}/>
-                    <img onMouseEnter={this.changeVessel} onMouseLeave={this.changeBackVessel} className="icon-image" id="vessel-icon" src={this.state.image.vessel} alt="menu-item" onClick={this.props.getVessel}/>
-                    <img onMouseEnter={this.changePainting} onMouseLeave={this.changeBackPainting} className="icon-image" id="painting-icon" src={this.state.image.painting} alt="menu-item" onClick={this.props.getPainting}/>
-                    <img onMouseEnter={this.changeAdvertising} onMouseLeave={this.changeBackAdvertising} className="icon-image" id="advertising-icon" src={this.state.image.advertising} alt="menu-item" onClick={this.props.getAdvertising}/>
-                    <img onMouseEnter={this.changeDesign} onMouseLeave={this.changeBackDesign} className="icon-image" id="design-icon" src={this.state.image.design} alt="menu-item" onClick={this.props.getDesign}/>
+                    <img onMouseEnter={this.changeApp} 
+                        onMouseLeave={this.changeBackApp} 
+                        className="icon-image" id="app-icon" 
+                        src={this.state.image.app} alt="menu-item" 
+                        onClick={this.props.getApp} />
+                    <img onMouseEnter={this.changeCactus} 
+                        onMouseLeave={this.changeBackCactus} 
+                        className="icon-image" id="cactus-icon" 
+                        src={this.state.image.cactus} alt="menu-item" 
+                        onClick={this.props.getCactus} />
+                    <img onMouseEnter={this.changeTree} 
+                        onMouseLeave={this.changeBackTree} 
+                        className="icon-image" id="tree-icon" 
+                        src={this.state.image.tree} alt="menu-item" 
+                        onClick={this.props.getTree} />
+                    <img onMouseEnter={this.changeSculpture} 
+                        onMouseLeave={this.changeBackSculpture} 
+                        className="icon-image" id="sculpture-icon" 
+                        src={this.state.image.sculpture} alt="menu-item" 
+                        onClick={this.props.getSculpture} />
+                    <img onMouseEnter={this.changeVessel} 
+                        onMouseLeave={this.changeBackVessel} 
+                        className="icon-image" id="vessel-icon" 
+                        src={this.state.image.vessel} alt="menu-item" 
+                        onClick={this.props.getVessel} />
+                    <img onMouseEnter={this.changePainting} 
+                        onMouseLeave={this.changeBackPainting} 
+                        className="icon-image" id="painting-icon" 
+                        src={this.state.image.painting} alt="menu-item" 
+                        onClick={this.props.getPainting} />
+                    <img onMouseEnter={this.changeAdvertising} 
+                        onMouseLeave={this.changeBackAdvertising} 
+                        className="icon-image" id="advertising-icon" 
+                        src={this.state.image.advertising} alt="menu-item" 
+                        onClick={this.props.getAdvertising} />
+                    <img onMouseEnter={this.changeDesign} 
+                        onMouseLeave={this.changeBackDesign} 
+                        className="icon-image" id="design-icon" 
+                        src={this.state.image.design} alt="menu-item" 
+                        onClick={this.props.getDesign} />
             </div>
         )
     }
