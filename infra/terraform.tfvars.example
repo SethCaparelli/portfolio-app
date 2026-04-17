@@ -1,0 +1,12 @@
+aws_region     = "us-east-1"
+aws_account_id = "662410546884"
+
+github_owner = "SethCaparelli"
+github_repo  = "portfolio-app"
+
+s3_bucket_name = "seth-caparelli.com"
+
+cloudfront_distribution_ids = [
+  "E13GAAU4Z8UXZC", # apex: seth-caparelli.com
+  "E1Z80APPF5O8EL", # www:  www.seth-caparelli.com
+]
