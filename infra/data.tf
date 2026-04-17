@@ -1,5 +1,6 @@
 data "aws_s3_bucket" "site" {
-  bucket = var.s3_bucket_name
+  provider = aws.bucket
+  bucket   = var.s3_bucket_name
 }
 
 data "aws_cloudfront_distribution" "site" {

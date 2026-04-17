@@ -19,3 +19,17 @@ provider "aws" {
     }
   }
 }
+
+# The S3 bucket lives in its own region; use an aliased provider
+# so the data source reads from the right endpoint.
+provider "aws" {
+  alias  = "bucket"
+  region = var.s3_bucket_region
+
+  default_tags {
+    tags = {
+      Project   = "portfolio-app"
+      ManagedBy = "terraform"
+    }
+  }
+}

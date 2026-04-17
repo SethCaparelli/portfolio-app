@@ -4,7 +4,8 @@ aws_account_id = "662410546884"
 github_owner = "SethCaparelli"
 github_repo  = "portfolio-app"
 
-s3_bucket_name = "seth-caparelli.com"
+s3_bucket_name   = "seth-caparelli.com"
+s3_bucket_region = "us-west-2"
 
 cloudfront_distribution_ids = [
   "E13GAAU4Z8UXZC", # apex: seth-caparelli.com

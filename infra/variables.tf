@@ -30,6 +30,12 @@ variable "s3_bucket_name" {
   type        = string
 }
 
+variable "s3_bucket_region" {
+  description = "Region the S3 bucket lives in. Different from aws_region because IAM is global but S3 is regional."
+  type        = string
+  default     = "us-west-2"
+}
+
 variable "cloudfront_distribution_ids" {
   description = "Existing CloudFront distribution IDs to invalidate after deploys."
   type        = list(string)
