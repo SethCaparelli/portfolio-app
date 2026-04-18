@@ -21,7 +21,7 @@ describe('Nav', () => {
     const user = userEvent.setup();
     render(<Nav />);
     await user.click(screen.getByText(/about/i));
-    expect(await screen.findByText(/artist turned web developer/i)).toBeInTheDocument();
+    expect(await screen.findByText(/senior software engineer with 8 years/i)).toBeInTheDocument();
   });
 
   it('opens the Resume modal with download link when clicked', async () => {

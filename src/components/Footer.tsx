@@ -13,6 +13,14 @@ export default function Footer() {
           <i className="fab fa-linkedin-in"></i>
         </a>
         <a
+          href="https://github.com/SethCaparelli"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <i className="fab fa-github"></i>
+        </a>
+        <a
           href="https://soundcloud.com/bear_remington"
           target="_blank"
           rel="noopener noreferrer"

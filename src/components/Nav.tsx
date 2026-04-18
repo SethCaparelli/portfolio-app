@@ -24,12 +24,11 @@ export default function Nav() {
       >
         <img id="profile-picture" src="/assets/icons/profile.webp" alt="Profile" />
         <p id="about-description">
-          I am an artist turned web developer. I have always loved building with my hands; but as a
-          programmer, my mind is my tool of choice. The passion I have as an artist has transformed
-          into creative problem solving in the form of code. Bridging the gap between art and code is
-          something I continually think about and to actually make an impact on the world with my
-          work is what drives me. I embrace the challenges of this industry and its constant
-          evolution that I am excited to be apart of.
+          Senior Software Engineer with 8 years shipping enterprise retail products end-to-end, from
+          customer-facing loyalty and store-finder UIs to event-driven microservices on Kafka and AWS
+          in PCI DSS environments. Full-stack across React, Node.js, Java, and Python; de facto tech
+          lead known for clear design docs, cross-team collaboration, and mentoring through code
+          review. Artist at core, which is where the design instinct and product empathy come from.
         </p>
       </Modal>
       <Modal

@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import 'react-responsive-modal/styles.css';
+import 'yet-another-react-lightbox/styles.css';
 import './index.css';
 import App from './components/App';
 

@@ -100,11 +100,31 @@ header{
   width: auto;
 }
 
+/* react-responsive-modal v7 centers via inline-block + text-align, which
+   conflicts with the flex layouts we use on individual modals. Force flex
+   centering on the container instead. */
+.react-responsive-modal-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+}
+.react-responsive-modal-containerCenter {
+  align-items: center !important;
+}
+.react-responsive-modal-containerCenter::after {
+  display: none !important;
+}
+
 .about-modal {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
+  gap: 1rem;
+  max-width: 600px;
+}
+
+#about-description {
+  text-align: left;
 }
 
 .resume-modal {
