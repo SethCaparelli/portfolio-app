@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import type { CategoryKey } from '../types';
 
 interface MenuItem {
@@ -7,6 +8,7 @@ interface MenuItem {
   icon: string;
   iconColor: string;
   label: string;
+  to: string;
 }
 
 const items: MenuItem[] = [
@@ -16,6 +18,7 @@ const items: MenuItem[] = [
     icon: '/assets/icons/app-icon.webp',
     iconColor: '/assets/icons/app-icon-color.webp',
     label: 'Apps',
+    to: '/',
   },
   {
     key: 'cactus',
@@ -23,6 +26,7 @@ const items: MenuItem[] = [
     icon: '/assets/icons/cactus-icon.webp',
     iconColor: '/assets/icons/cactus-icon-color.webp',
     label: 'Cactus',
+    to: '/cactus',
   },
   {
     key: 'tree',
@@ -30,6 +34,7 @@ const items: MenuItem[] = [
     icon: '/assets/icons/tree-icon.webp',
     iconColor: '/assets/icons/tree-icon-color.webp',
     label: 'Tree',
+    to: '/tree',
   },
   {
     key: 'sculpture',
@@ -37,6 +42,7 @@ const items: MenuItem[] = [
     icon: '/assets/icons/sculpture-icon.webp',
     iconColor: '/assets/icons/sculpture-icon-color.webp',
     label: 'Sculpture',
+    to: '/sculpture',
   },
   {
     key: 'vessel',
@@ -44,6 +50,7 @@ const items: MenuItem[] = [
     icon: '/assets/icons/vessel-icon.webp',
     iconColor: '/assets/icons/vessel-icon-color.webp',
     label: 'Vessel',
+    to: '/vessel',
   },
   {
     key: 'painting',
@@ -51,6 +58,7 @@ const items: MenuItem[] = [
     icon: '/assets/icons/painting-icon.webp',
     iconColor: '/assets/icons/painting-icon-color.webp',
     label: 'Painting',
+    to: '/painting',
   },
   {
     key: 'advertising',
@@ -58,6 +66,7 @@ const items: MenuItem[] = [
     icon: '/assets/icons/advertising-icon.webp',
     iconColor: '/assets/icons/advertising-icon-color.webp',
     label: 'Advertising',
+    to: '/advertising',
   },
   {
     key: 'design',
@@ -65,34 +74,34 @@ const items: MenuItem[] = [
     icon: '/assets/icons/design-icon.webp',
     iconColor: '/assets/icons/design-icon-color.webp',
     label: 'Design',
+    to: '/design',
   },
 ];
 
-interface Props {
-  selected: CategoryKey;
-  onSelect: (key: CategoryKey) => void;
-}
-
-export default function Menu({ selected, onSelect }: Props) {
+export default function Menu() {
   const [hovered, setHovered] = useState<CategoryKey | null>(null);
 
   return (
     <div id="menu">
-      {items.map((item) => {
-        const isActive = hovered === item.key || selected === item.key;
-        return (
-          <img
-            key={item.key}
-            id={item.id}
-            className="icon-image"
-            src={isActive ? item.iconColor : item.icon}
-            alt={item.label}
-            onMouseEnter={() => setHovered(item.key)}
-            onMouseLeave={() => setHovered(null)}
-            onClick={() => onSelect(item.key)}
-          />
-        );
-      })}
+      {items.map((item) => (
+        <NavLink
+          key={item.key}
+          to={item.to}
+          end={item.to === '/'}
+          aria-label={item.label}
+          onMouseEnter={() => setHovered(item.key)}
+          onMouseLeave={() => setHovered(null)}
+        >
+          {({ isActive }) => (
+            <img
+              id={item.id}
+              className="icon-image"
+              src={isActive || hovered === item.key ? item.iconColor : item.icon}
+              alt={item.label}
+            />
+          )}
+        </NavLink>
+      ))}
     </div>
   );
 }

@@ -5,8 +5,6 @@ import App from '../components/App';
 import { categories } from '../data/categories';
 import type { CategoryKey } from '../types';
 
-// Menu icon alt text (set in Menu.tsx, distinct from category.title which can
-// contain regex metachars like "Cactus^3").
 const menuLabels: Record<CategoryKey, string> = {
   app: 'Apps',
   cactus: 'Cactus',
@@ -19,30 +17,40 @@ const menuLabels: Record<CategoryKey, string> = {
 };
 
 describe('App', () => {
-  it('renders the header and the default Apps category', () => {
+  it('renders the header and the default Apps category at /', () => {
+    window.history.pushState({}, '', '/');
     render(<App />);
     expect(screen.getByRole('heading', { name: /seth caparelli/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 3, name: 'Apps' })).toBeInTheDocument();
   });
 
   it.each(Object.keys(menuLabels).filter((k) => k !== 'app') as CategoryKey[])(
-    'switches to %s when its menu icon is clicked',
+    'navigates to /%s when its menu icon is clicked',
     async (key) => {
+      window.history.pushState({}, '', '/');
       const user = userEvent.setup();
       render(<App />);
-      const icon = screen.getByAltText(menuLabels[key]);
-      await user.click(icon);
+      await user.click(screen.getByAltText(menuLabels[key]));
       expect(
         screen.getByRole('heading', { level: 3, name: categories[key].title }),
       ).toBeInTheDocument();
+      expect(window.location.pathname).toBe(`/${key}`);
     },
   );
 
   it('renders one tile per work in the active category', async () => {
+    window.history.pushState({}, '', '/');
     const user = userEvent.setup();
     render(<App />);
     await user.click(screen.getByAltText('Sculpture'));
     const tiles = screen.getAllByAltText('artwork');
     expect(tiles).toHaveLength(categories.sculpture.works.length);
+  });
+
+  it('redirects unknown categories back to /', () => {
+    window.history.pushState({}, '', '/not-a-category');
+    render(<App />);
+    expect(screen.getByRole('heading', { level: 3, name: 'Apps' })).toBeInTheDocument();
+    expect(window.location.pathname).toBe('/');
   });
 });

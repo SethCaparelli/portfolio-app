@@ -1,11 +1,29 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { describe, it, expect, vi } from 'vitest';
+import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { describe, it, expect } from 'vitest';
 import Menu from '../components/Menu';
+
+function LocationProbe() {
+  const loc = useLocation();
+  return <div data-testid="location">{loc.pathname}</div>;
+}
+
+function renderAt(path: string) {
+  return render(
+    <MemoryRouter initialEntries={[path]}>
+      <Routes>
+        <Route path="/" element={<Menu />} />
+        <Route path=":category" element={<Menu />} />
+      </Routes>
+      <LocationProbe />
+    </MemoryRouter>,
+  );
+}
 
 describe('Menu', () => {
   it('renders all 8 category icons', () => {
-    render(<Menu selected="app" onSelect={() => {}} />);
+    renderAt('/');
     for (const label of [
       'Apps',
       'Cactus',
@@ -20,15 +38,18 @@ describe('Menu', () => {
     }
   });
 
-  it('shows the color icon for the selected category', () => {
-    render(<Menu selected="cactus" onSelect={() => {}} />);
+  it('shows the color icon for the active route', () => {
+    renderAt('/cactus');
     const cactus = screen.getByAltText('Cactus') as HTMLImageElement;
     expect(cactus.src).toMatch(/cactus-icon-color\.webp$/);
+
+    const tree = screen.getByAltText('Tree') as HTMLImageElement;
+    expect(tree.src).toMatch(/tree-icon\.webp$/);
   });
 
   it('swaps to the color icon on hover and back on leave', async () => {
     const user = userEvent.setup();
-    render(<Menu selected="app" onSelect={() => {}} />);
+    renderAt('/');
     const tree = screen.getByAltText('Tree') as HTMLImageElement;
 
     expect(tree.src).toMatch(/tree-icon\.webp$/);
@@ -38,12 +59,10 @@ describe('Menu', () => {
     expect(tree.src).toMatch(/tree-icon\.webp$/);
   });
 
-  it('calls onSelect with the clicked category key', async () => {
+  it('navigates to the matching route when an icon is clicked', async () => {
     const user = userEvent.setup();
-    const onSelect = vi.fn();
-    render(<Menu selected="app" onSelect={onSelect} />);
-
+    renderAt('/');
     await user.click(screen.getByAltText('Sculpture'));
-    expect(onSelect).toHaveBeenCalledWith('sculpture');
+    expect(screen.getByTestId('location')).toHaveTextContent('/sculpture');
   });
 });
