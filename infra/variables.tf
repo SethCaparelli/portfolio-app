@@ -19,10 +19,10 @@ variable "github_repo" {
   type        = string
 }
 
-variable "github_branch" {
-  description = "Branch allowed to assume the deploy role."
+variable "github_environment" {
+  description = "GitHub Actions environment allowed to assume the deploy role. Enforce branch restriction via repo Settings → Environments → deployment branch rules."
   type        = string
-  default     = "main"
+  default     = "production"
 }
 
 variable "s3_bucket_name" {
