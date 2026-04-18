@@ -17,6 +17,7 @@ env:
   AWS_REGION: us-east-1
   S3_BUCKET: seth-caparelli.com
   CF_DISTRIBUTION_IDS: E13GAAU4Z8UXZC E1Z80APPF5O8EL
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   deploy:
