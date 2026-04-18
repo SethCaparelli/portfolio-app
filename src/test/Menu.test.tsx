@@ -23,7 +23,7 @@ describe('Menu', () => {
   it('shows the color icon for the selected category', () => {
     render(<Menu selected="cactus" onSelect={() => {}} />);
     const cactus = screen.getByAltText('Cactus') as HTMLImageElement;
-    expect(cactus.src).toMatch(/cactus-icon-color\.png$/);
+    expect(cactus.src).toMatch(/cactus-icon-color\.webp$/);
   });
 
   it('swaps to the color icon on hover and back on leave', async () => {
@@ -31,11 +31,11 @@ describe('Menu', () => {
     render(<Menu selected="app" onSelect={() => {}} />);
     const tree = screen.getByAltText('Tree') as HTMLImageElement;
 
-    expect(tree.src).toMatch(/tree-icon\.png$/);
+    expect(tree.src).toMatch(/tree-icon\.webp$/);
     await user.hover(tree);
-    expect(tree.src).toMatch(/tree-icon-color\.png$/);
+    expect(tree.src).toMatch(/tree-icon-color\.webp$/);
     await user.unhover(tree);
-    expect(tree.src).toMatch(/tree-icon\.png$/);
+    expect(tree.src).toMatch(/tree-icon\.webp$/);
   });
 
   it('calls onSelect with the clicked category key', async () => {

@@ -22,7 +22,7 @@ export default function Nav() {
         classNames={{ overlay: 'about-overlay', modal: 'about-modal' }}
         center
       >
-        <img id="profile-picture" src="/assets/icons/profile.png" alt="Profile" />
+        <img id="profile-picture" src="/assets/icons/profile.webp" alt="Profile" />
         <p id="about-description">
           I am an artist turned web developer. I have always loved building with my hands; but as a
           programmer, my mind is my tool of choice. The passion I have as an artist has transformed
