@@ -29,9 +29,8 @@ describe('Nav', () => {
     render(<Nav />);
     await user.click(screen.getByText(/resume/i));
     expect(await screen.findByAltText(/resume/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/download resume/i)).toHaveAttribute(
-      'href',
-      expect.stringContaining('drive.google.com'),
-    );
+    const download = screen.getByLabelText(/download resume/i);
+    expect(download).toHaveAttribute('href', '/assets/seth-caparelli-resume.pdf');
+    expect(download).toHaveAttribute('download');
   });
 });

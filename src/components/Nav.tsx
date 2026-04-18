@@ -38,11 +38,10 @@ export default function Nav() {
         classNames={{ overlay: 'resume-overlay', modal: 'resume-modal' }}
         center
       >
-        <img id="resume" src="/assets/seth_capareli_resume.png" alt="Resume" />
+        <img id="resume" src="/assets/seth-caparelli-resume.webp" alt="Resume" />
         <a
-          href="https://drive.google.com/file/d/1rZ_xxq5kBboSFmpk2UEtfGwEuFhFw7fi/view?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/assets/seth-caparelli-resume.pdf"
+          download="seth-caparelli-resume.pdf"
           aria-label="Download resume"
         >
           <i className="fas fa-download"></i>
