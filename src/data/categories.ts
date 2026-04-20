@@ -64,7 +64,6 @@ export const categories: Record<CategoryKey, Category> = {
         ],
         url: '/assets/gifs/music.gif',
         code: 'https://github.com/SethCaparelli/music-app-frontend',
-        site: 'http://www.music-at.surge.sh',
       },
       {
         kind: 'app',
@@ -80,7 +79,6 @@ export const categories: Record<CategoryKey, Category> = {
         ],
         url: '/assets/gifs/cocktail.gif',
         code: 'https://github.com/SethCaparelli/cocktail-app-react',
-        site: 'http://www.cocktail.surge.sh',
       },
     ],
   },
