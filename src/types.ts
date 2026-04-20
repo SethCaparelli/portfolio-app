@@ -14,7 +14,7 @@ export interface AppWork {
   description: string;
   technologies: string[];
   url: string;
-  code: string;
+  code?: string;
   site?: string;
 }
 

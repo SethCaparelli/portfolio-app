@@ -146,6 +146,12 @@ header{
   width: auto;
 }
 
+#app-title {
+  font-family: 'Ruda', sans-serif;
+  margin: 0 0 10px;
+  text-align: center;
+}
+
 #app-gif {
   height: 50%;
   width: auto;
@@ -153,14 +159,25 @@ header{
 
 #tech-icon-container {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
+  gap: 18px;
   width: 100%;
 }
 
+.tech-icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 18px 28px;
+}
+
 .tech-icon {
-  width: 8%;
-  height: auto;
+  width: auto;
+  height: 44px;
+  max-width: 80px;
+  object-fit: contain;
 }
 
 #app-description {
@@ -219,6 +236,8 @@ header{
   align-items: center;
   overflow-y: scroll;
   width: 100%;
+  padding: 0 4%;
+  box-sizing: border-box;
 }
 
 .work-body-small {
@@ -227,6 +246,8 @@ header{
   align-items: center;
   overflow-y: scroll;
   width: 100%;
+  padding: 0 4%;
+  box-sizing: border-box;
 }
 
 .work {

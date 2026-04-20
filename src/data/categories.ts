@@ -13,6 +13,27 @@ export const categories: Record<CategoryKey, Category> = {
     works: [
       {
         kind: 'app',
+        name: 'Muvic',
+        description:
+          'A desktop app that syncs your Spotify playlists to your Beatport cart. Built with Electron and React, it uses Puppeteer to automate Beatport and the Spotify Web API to pull liked tracks, so DJs can quickly add new finds to their collection.',
+        technologies: [
+          '/assets/technologies/typescript-icon.png',
+          '/assets/technologies/react-icon-2.png',
+          '/assets/technologies/electron-icon.png',
+          '/assets/technologies/node-icon.png',
+          '/assets/technologies/express-icon.png',
+          '/assets/technologies/sqlite-icon.png',
+          '/assets/technologies/docker-icon.png',
+          '/assets/technologies/puppeteer-icon.png',
+          '/assets/technologies/spotify-icon.png',
+          '/assets/technologies/jest-icon.png',
+          '/assets/technologies/playwright-icon.png',
+        ],
+        url: '/assets/gifs/muvic.webp',
+        site: 'https://muvic.app',
+      },
+      {
+        kind: 'app',
         name: 'Fridge Vision',
         description:
           'A Native app that allows users to capture a photo of their fridge or pantry with their mobile device. Fridge Vision then uses an image recognition API to create a list of ingredients. Users are then presented with recipes that they can make with the available food items they already have.',

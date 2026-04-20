@@ -18,13 +18,15 @@ describe('categories data', () => {
     }
   });
 
-  it('app-kind works expose code link, name, description, and technologies', () => {
+  it('app-kind works expose name, description, technologies, and at least one link', () => {
     for (const work of categories.app.works) {
       if (work.kind !== 'app') throw new Error('app category must contain app works');
       expect(work.name.length).toBeGreaterThan(0);
       expect(work.description.length).toBeGreaterThan(0);
-      expect(work.code).toMatch(/^https:\/\//);
       expect(work.technologies.length).toBeGreaterThan(0);
+      expect(work.code ?? work.site).toMatch(/^https?:\/\//);
+      if (work.code) expect(work.code).toMatch(/^https:\/\//);
+      if (work.site) expect(work.site).toMatch(/^https?:\/\//);
     }
   });
 
