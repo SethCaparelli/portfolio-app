@@ -88,17 +88,21 @@ export default function Menu() {
           key={item.key}
           to={item.to}
           end={item.to === '/'}
+          className="menu-item"
           aria-label={item.label}
           onMouseEnter={() => setHovered(item.key)}
           onMouseLeave={() => setHovered(null)}
         >
           {({ isActive }) => (
-            <img
-              id={item.id}
-              className="icon-image"
-              src={isActive || hovered === item.key ? item.iconColor : item.icon}
-              alt={item.label}
-            />
+            <>
+              <img
+                id={item.id}
+                className="icon-image"
+                src={isActive || hovered === item.key ? item.iconColor : item.icon}
+                alt={item.label}
+              />
+              <span className="menu-label">{item.label}</span>
+            </>
           )}
         </NavLink>
       ))}
