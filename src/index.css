@@ -185,26 +185,38 @@ header{
 }
 
 #app-button-container {
-  width: 50%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
 .app-button {
-  height: 40px;
-  background-color: rgb(42, 212, 42);
-  border-radius: 5px;
-  color: white;
-  padding: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border: 1.5px solid #424141;
+  border-radius: 999px;
+  background-color: transparent;
+  color: #424141;
+  font-family: 'Ruda', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
 }
 
 .app-button:hover {
-  transform: scale(1.05)
+  background-color: #424141;
+  color: white;
+  transform: translateY(-1px);
 }
 
-#code-button {
-  background-color: #3772FF
+.app-button-icon {
+  width: 14px;
+  height: 14px;
+  display: block;
 }
 
 /* work Body */

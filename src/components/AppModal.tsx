@@ -34,22 +34,44 @@ export default function AppModal({ work, open, onClose }: Props) {
       </div>
       <p id="app-description">{work.description}</p>
       <div id="app-button-container">
-        {work.code ? (
-          <button
-            id="code-button"
-            className="app-button"
-            onClick={() => window.open(work.code, '_blank', 'noopener,noreferrer')}
+        <button
+          className="app-button"
+          onClick={() => window.open(work.url, '_blank', 'noopener,noreferrer')}
+        >
+          <svg
+            className="app-button-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
           >
-            See Code
-          </button>
-        ) : null}
+            <path
+              d="M8 5v14l11-7z"
+              fill="currentColor"
+            />
+          </svg>
+          View Video
+        </button>
         {work.site ? (
           <button
-            id="site-button"
             className="app-button"
             onClick={() => window.open(work.site, '_blank', 'noopener,noreferrer')}
           >
-            Visit Site
+            <svg
+              className="app-button-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+            Visit
           </button>
         ) : null}
       </div>

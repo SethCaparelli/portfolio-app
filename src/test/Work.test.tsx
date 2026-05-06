@@ -33,8 +33,8 @@ describe('Work', () => {
     render(<Work work={appWork} index={0} collection={[appWork]} />);
     await user.click(screen.getByAltText('Test App'));
     expect(await screen.findByText(/A test app/i)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /see code/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /visit site/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /view video/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /^visit$/i })).toBeInTheDocument();
   });
 
   it('renders an artwork image with lazy loading for image works', () => {
