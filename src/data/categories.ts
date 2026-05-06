@@ -31,6 +31,7 @@ export const categories: Record<CategoryKey, Category> = {
         ],
         url: '/assets/gifs/muvic.webp',
         site: 'https://muvic.app',
+        hideVideo: true,
       },
       {
         kind: 'app',

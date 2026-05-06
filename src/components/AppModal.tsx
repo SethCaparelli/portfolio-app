@@ -34,23 +34,25 @@ export default function AppModal({ work, open, onClose }: Props) {
       </div>
       <p id="app-description">{work.description}</p>
       <div id="app-button-container">
-        <button
-          className="app-button"
-          onClick={() => window.open(work.url, '_blank', 'noopener,noreferrer')}
-        >
-          <svg
-            className="app-button-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
+        {work.hideVideo ? null : (
+          <button
+            className="app-button"
+            onClick={() => window.open(work.url, '_blank', 'noopener,noreferrer')}
           >
-            <path
-              d="M8 5v14l11-7z"
-              fill="currentColor"
-            />
-          </svg>
-          View Video
-        </button>
+            <svg
+              className="app-button-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                d="M8 5v14l11-7z"
+                fill="currentColor"
+              />
+            </svg>
+            View Video
+          </button>
+        )}
         {work.site ? (
           <button
             className="app-button"

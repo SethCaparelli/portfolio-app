@@ -16,6 +16,7 @@ export interface AppWork {
   url: string;
   code?: string;
   site?: string;
+  hideVideo?: boolean;
 }
 
 export interface ImageWork {
