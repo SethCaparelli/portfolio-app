@@ -9,23 +9,13 @@ concurrency:
   group: deploy-production
   cancel-in-progress: false
 
-permissions:
-  id-token: write
-  contents: read
-
 env:
-  AWS_REGION: us-east-1
-  S3_BUCKET: seth-caparelli.com
-  CF_DISTRIBUTION_IDS: E13GAAU4Z8UXZC E1Z80APPF5O8EL
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
-    environment:
-      name: production
-      url: https://seth-caparelli.com
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
 
@@ -44,7 +34,49 @@ jobs:
 
       - run: pnpm test
 
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
       - run: pnpm build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 1
+          if-no-files-found: error
+
+  deploy:
+    needs: [test, build]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      id-token: write
+      contents: read
+    environment:
+      name: production
+      url: https://seth-caparelli.com
+    env:
+      AWS_REGION: us-east-1
+      S3_BUCKET: seth-caparelli.com
+      CF_DISTRIBUTION_IDS: E13GAAU4Z8UXZC E1Z80APPF5O8EL
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
